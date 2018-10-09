@@ -1,0 +1,112 @@
+<html>
+<head>
+<script>
+window.onload=function()
+{
+
+document.getElementById('btnCalc').addEventListener('click', calcBeast);
+}
+
+
+
+function occurrences(string, subString, allowOverlapping) {
+
+string = string.toUpperCase();
+    string += "";
+    subString += "";
+    if (subString.length <= 0) return (string.length + 1);
+
+    var n = 0,
+        pos = 0,
+        step = allowOverlapping ? 1 : subString.length;
+
+    while (true) {
+        pos = string.indexOf(subString, pos);
+        if (pos >= 0) {
+            ++n;
+            pos += step;
+        } else break;
+    }
+    return n;
+}
+
+function calcBeast(e)
+{
+var beast = document.getElementById('userinput').value;
+A = occurrences(beast, "A") * 6;
+B = occurrences(beast, "B") * 12;
+C = occurrences(beast, "C") * 18;
+D = occurrences(beast, "D") * 24;
+E = occurrences(beast, "E") * 30;
+F = occurrences(beast, "F") * 36;
+G = occurrences(beast, "G") * 42;
+H = occurrences(beast, "H") * 48;
+I = occurrences(beast, "I") * 54;
+J = occurrences(beast, "J") * 60;
+K = occurrences(beast, "K") * 66;
+L = occurrences(beast, "L") * 72;
+M = occurrences(beast, "M") * 78;
+N = occurrences(beast, "N") * 84;
+O = occurrences(beast, "O") * 90;
+P = occurrences(beast, "P") * 96;
+Q = occurrences(beast, "Q") * 102;
+R = occurrences(beast, "R") * 108;
+S = occurrences(beast, "S") * 114;
+T = occurrences(beast, "T") * 120;
+U = occurrences(beast, "U") * 126;
+V = occurrences(beast, "V") * 132;
+W = occurrences(beast, "W") * 138;
+X = occurrences(beast, "X") * 144;
+Y = occurrences(beast, "Y") * 150;
+Z = occurrences(beast, "Z") * 150;
+
+ZZ = occurrences(beast, "Z") * 6;
+YY = occurrences(beast, "Y") * 12;
+XX = occurrences(beast, "X") * 18;
+WW = occurrences(beast, "W") * 24;
+VV = occurrences(beast, "V") * 30;
+UU = occurrences(beast, "U") * 36;
+TT = occurrences(beast, "T") * 42;
+SS = occurrences(beast, "S") * 48;
+RR = occurrences(beast, "R") * 54;
+QQ = occurrences(beast, "Q") * 60;
+PP = occurrences(beast, "P") * 66;
+OO = occurrences(beast, "O") * 72;
+NN = occurrences(beast, "N") * 78;
+MM = occurrences(beast, "M") * 84;
+LL = occurrences(beast, "L") * 90;
+KK = occurrences(beast, "K") * 96;
+JJ = occurrences(beast, "J") * 102;
+II = occurrences(beast, "I") * 108;
+HH = occurrences(beast, "H") * 114;
+GG = occurrences(beast, "G") * 120;
+FF = occurrences(beast, "F") * 126;
+EE = occurrences(beast, "E") * 132;
+DD = occurrences(beast, "D") * 138;
+CC = occurrences(beast, "C") * 144;
+BB = occurrences(beast, "B") * 150;
+AA = occurrences(beast, "A") * 150;
+
+var addit = A+B+C+D+E+F+G+H+I+J+K+L+M+N+O+P+Q+R+S+T+U+V+W+X+Y+Z;
+var addit2 = AA+BB+CC+DD+EE+FF+GG+HH+II+JJ+KK+LL+MM+NN+OO+PP+QQ+RR+SS+TT+UU+VV+WW+XX+YY+ZZ;
+var result = beast + " equals " + addit;
+var result2 = "<b>Reverse:</b> " + beast + " equals " + addit2;
+document.getElementById('result').innerHTML = result;
+document.getElementById('result2').innerHTML = result2;
+}
+</script>
+</head>
+<body>
+<center>
+<h1>End Times Calculator</h1>
+<input id="userinput" type="text" onKeyDown="if(event.keyCode==13) calcBeast();"/>
+<input id = "btnCalc" type="submit" value="Calculate">
+
+<br><br>
+<div id="result"></div>
+<div id="result2"></div>
+</body>
+</html>
+
+
+
